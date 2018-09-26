@@ -1,10 +1,10 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var eventemitter2_1 = require("eventemitter2");
 var EventHandler = /** @class */ (function () {
     function EventHandler(config) {
         this.defaultConfig = {
-            wildcard: true,
+            wildcard: true
         };
         this.server = new eventemitter2_1.EventEmitter2(this.defaultConfig);
     }
@@ -17,4 +17,4 @@ var EventHandler = /** @class */ (function () {
     EventHandler.instances = {};
     return EventHandler;
 }());
-exports.default = EventHandler;
+exports["default"] = EventHandler;

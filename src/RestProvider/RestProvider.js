@@ -38,14 +38,17 @@ exports.__esModule = true;
 var RestProvider = /** @class */ (function () {
     function RestProvider(baseUrl, httpProvider, inspectorFn) {
         this.httpProvider = httpProvider;
-        this.inspectorFn = this.inspectorFn;
+        this.inspectorFn = inspectorFn;
     }
+    RestProvider.prototype.request = function (request) {
+        return this.httpProvider.send(this.inspectorFn(request));
+    };
     RestProvider.prototype.create = function (url, model) {
         return __awaiter(this, void 0, void 0, function () {
             var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.httpProvider.send({
+                    case 0: return [4 /*yield*/, this.request({
                             method: "POST",
                             url: url,
                             body: JSON.stringify(model)
@@ -68,7 +71,7 @@ var RestProvider = /** @class */ (function () {
             var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.httpProvider.send({
+                    case 0: return [4 /*yield*/, this.request({
                             method: "DELETE",
                             url: url
                         })];
@@ -90,7 +93,7 @@ var RestProvider = /** @class */ (function () {
             var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.httpProvider.send({
+                    case 0: return [4 /*yield*/, this.request({
                             method: "POST",
                             url: url,
                             body: JSON.stringify(model)
@@ -113,7 +116,7 @@ var RestProvider = /** @class */ (function () {
             var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.httpProvider.send({
+                    case 0: return [4 /*yield*/, this.request({
                             method: "GET",
                             url: url
                         })];
@@ -135,7 +138,7 @@ var RestProvider = /** @class */ (function () {
             var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.httpProvider.send({
+                    case 0: return [4 /*yield*/, this.request({
                             method: "POST",
                             url: url,
                             body: JSON.stringify(query)

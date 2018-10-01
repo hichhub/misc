@@ -1,5 +1,5 @@
 import IRestProvider from "./IRestProvider";
-import IHttpProvider, {IHttpRequest} from "./../HttpProvider/IHttpProvider";
+import IHttpProvider, {IHttpRequest, IHttpResponse} from "./../HttpProvider/IHttpProvider";
 
 export default class RestProvider<T> implements IRestProvider<T> {
 
@@ -8,11 +8,15 @@ export default class RestProvider<T> implements IRestProvider<T> {
 
 	constructor(baseUrl: string, httpProvider: IHttpProvider, inspectorFn: (request:IHttpRequest)=> IHttpRequest ){
 		this.httpProvider = httpProvider;
-		this.inspectorFn = this.inspectorFn;
+		this.inspectorFn = inspectorFn;
+	}
+
+	protected request(request: IHttpRequest): Promise<IHttpResponse> {
+		return this.httpProvider.send(this.inspectorFn(request));
 	}
 
 	async create(url: string, model: T): Promise<T> {
-		const result = await this.httpProvider.send({
+		const result = await this.request({
 			method: "POST",
 			url,
 			body: JSON.stringify(model),
@@ -25,7 +29,7 @@ export default class RestProvider<T> implements IRestProvider<T> {
 	}
 
 	async delete(url: string): Promise<boolean> {
-		const result = await this.httpProvider.send({
+		const result = await this.request({
 			method: "DELETE",
 			url,
 		});
@@ -36,7 +40,7 @@ export default class RestProvider<T> implements IRestProvider<T> {
 		}	}
 
 	async edit(url: string, model: T): Promise<T> {
-		const result = await this.httpProvider.send({
+		const result = await this.request({
 			method: "POST",
 			url,
 			body: JSON.stringify(model),
@@ -49,7 +53,7 @@ export default class RestProvider<T> implements IRestProvider<T> {
 	}
 
 	async get(url: string): Promise<T> {
-		const result = await this.httpProvider.send({
+		const result = await this.request({
 			method: "GET",
 			url
 		});
@@ -61,7 +65,7 @@ export default class RestProvider<T> implements IRestProvider<T> {
 	}
 
 	async search(url: string, query: Object): Promise<T[]> {
-		const result = await this.httpProvider.send({
+		const result = await this.request({
 			method: "POST",
 			url,
 			body: JSON.stringify(query),

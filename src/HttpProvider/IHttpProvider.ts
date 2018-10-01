@@ -8,7 +8,7 @@ export interface IHttpRequest {
 export interface IHttpResponse {
 	statusCode: number;
 	header?: {[key: string] : string};
-	body?: string;
+	body?: any;
 }
 
 

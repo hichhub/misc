@@ -11,7 +11,7 @@ export interface IHttpResponse {
     header?: {
         [key: string]: string;
     };
-    body?: string;
+    body?: any;
 }
 export default interface IHttpProvider {
     send(request: IHttpRequest): Promise<IHttpResponse>;

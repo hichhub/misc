@@ -56,7 +56,7 @@ var RestProvider = /** @class */ (function () {
                     case 1:
                         result = _a.sent();
                         if (result.statusCode >= 200 && result.statusCode < 400 && result.body) {
-                            return [2 /*return*/, JSON.parse(result.body)];
+                            return [2 /*return*/, result.body];
                         }
                         else {
                             throw result;
@@ -101,7 +101,7 @@ var RestProvider = /** @class */ (function () {
                     case 1:
                         result = _a.sent();
                         if (result.statusCode >= 200 && result.statusCode < 400 && result.body) {
-                            return [2 /*return*/, JSON.parse(result.body)];
+                            return [2 /*return*/, result.body];
                         }
                         else {
                             throw result;
@@ -123,7 +123,7 @@ var RestProvider = /** @class */ (function () {
                     case 1:
                         result = _a.sent();
                         if (result.statusCode >= 200 && result.statusCode < 400 && result.body) {
-                            return [2 /*return*/, JSON.parse(result.body)];
+                            return [2 /*return*/, result.body];
                         }
                         else {
                             throw result;
@@ -146,7 +146,7 @@ var RestProvider = /** @class */ (function () {
                     case 1:
                         result = _a.sent();
                         if (result.statusCode >= 200 && result.statusCode < 400 && result.body) {
-                            return [2 /*return*/, JSON.parse(result.body)];
+                            return [2 /*return*/, result.body];
                         }
                         else {
                             throw result;

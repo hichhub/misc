@@ -13,7 +13,7 @@ var HttpProvider = /** @class */ (function () {
         }).then(function (response) {
             var responseObj = {
                 statusCode: response.status,
-                body: response.data,
+                body: response.data.data,
                 header: response.headers
             };
             return responseObj;

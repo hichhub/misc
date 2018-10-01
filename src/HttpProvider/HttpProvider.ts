@@ -11,7 +11,7 @@ export default class HttpProvider implements IHttpProvider {
 		}).then(response => {
 			const responseObj: IHttpResponse= {
 				statusCode: response.status,
-				body: response.data,
+				body: response.data.data,
 				header: response.headers,
 			};
 			return responseObj;

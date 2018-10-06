@@ -41,7 +41,7 @@ export default class RestProvider<T> implements IRestProvider<T> {
 
 	async edit(url: string, model: T): Promise<T> {
 		const result = await this.request({
-			method: "POST",
+			method: "PUT",
 			url,
 			body: JSON.stringify(model),
 		});

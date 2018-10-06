@@ -94,7 +94,7 @@ var RestProvider = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.request({
-                            method: "POST",
+                            method: "PUT",
                             url: url,
                             body: JSON.stringify(model)
                         })];

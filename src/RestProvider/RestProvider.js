@@ -55,7 +55,7 @@ var RestProvider = /** @class */ (function () {
                         })];
                     case 1:
                         result = _a.sent();
-                        if (result.statusCode >= 200 && result.statusCode < 400 && result.body) {
+                        if (result.statusCode >= 200 && result.statusCode < 400) {
                             return [2 /*return*/, result.body];
                         }
                         else {
@@ -100,7 +100,7 @@ var RestProvider = /** @class */ (function () {
                         })];
                     case 1:
                         result = _a.sent();
-                        if (result.statusCode >= 200 && result.statusCode < 400 && result.body) {
+                        if (result.statusCode >= 200 && result.statusCode < 400) {
                             return [2 /*return*/, result.body];
                         }
                         else {
@@ -122,7 +122,7 @@ var RestProvider = /** @class */ (function () {
                         })];
                     case 1:
                         result = _a.sent();
-                        if (result.statusCode >= 200 && result.statusCode < 400 && result.body) {
+                        if (result.statusCode >= 200 && result.statusCode < 400) {
                             return [2 /*return*/, result.body];
                         }
                         else {
@@ -145,7 +145,7 @@ var RestProvider = /** @class */ (function () {
                         })];
                     case 1:
                         result = _a.sent();
-                        if (result.statusCode >= 200 && result.statusCode < 400 && result.body) {
+                        if (result.statusCode >= 200 && result.statusCode < 400) {
                             return [2 /*return*/, result.body];
                         }
                         else {

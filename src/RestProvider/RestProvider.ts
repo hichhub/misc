@@ -21,7 +21,7 @@ export default class RestProvider<T> implements IRestProvider<T> {
 			url,
 			body: JSON.stringify(model),
 		});
-		if (result.statusCode >= 200 && result.statusCode < 400 && result.body){
+		if (result.statusCode >= 200 && result.statusCode < 400){
 			return result.body as T;
 		} else {
 			throw result;
@@ -45,7 +45,7 @@ export default class RestProvider<T> implements IRestProvider<T> {
 			url,
 			body: JSON.stringify(model),
 		});
-		if (result.statusCode >= 200 && result.statusCode < 400 && result.body){
+		if (result.statusCode >= 200 && result.statusCode < 400){
 			return result.body as T;
 		} else {
 			throw result;
@@ -57,7 +57,7 @@ export default class RestProvider<T> implements IRestProvider<T> {
 			method: "GET",
 			url
 		});
-		if (result.statusCode >= 200 && result.statusCode < 400 && result.body){
+		if (result.statusCode >= 200 && result.statusCode < 400){
 			return result.body as T;
 		} else {
 			throw result;
@@ -70,7 +70,7 @@ export default class RestProvider<T> implements IRestProvider<T> {
 			url,
 			body: JSON.stringify(query),
 		});
-		if (result.statusCode >= 200 && result.statusCode < 400 && result.body){
+		if (result.statusCode >= 200 && result.statusCode < 400){
 			return result.body as T[];
 		} else {
 			throw result;
